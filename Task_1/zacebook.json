@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Yash",
+        "posts":[["Hello world",15]],
+        "friends":["Abc","Xyz"]
+    },
+    {
+        "name": "Abc",
+        "posts":[["Hi, Hello",9]],
+        "friends":["Yash"]
+    },
+    {
+        "name": "Xyz",
+        "posts":[["Hi",1]],
+        "friends":["Yash"]
+    },
+    {
+        "name": "Pqr",
+        "posts":[["Hi all",1]],
+        "friends":["Abc"]
+    }
+]
