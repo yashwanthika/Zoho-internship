@@ -14,7 +14,28 @@ git cherry-pick [commit_reference]
 ```
 ![git cherry-pick [commit_reference]](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/cherry_pick.png)
 ### git hooks
-git hooks run automatically every time a particular event occurs in a Git repository.Hooks reside in the .git/hooks directory of every Git repository. 
+git hooks run automatically every time a particular event occurs in a Git repository.
+Hooks reside in the .git/hooks directory of every Git repository. 
+
+.git/hooks contain:
+applypatch-msg.sample       
+commit-msg.sample           
+post-update.sample          
+pre-applypatch.sample       
+pre-commit.sample
+pre-push.sample
+pre-rebase.sample
+prepare-commit-msg.sample
+update.sample
+
+the .sample extension prevents them from executing by default. To “install” a hook, .sample extension is removed.
+In prepare-commit-msg the following is added to show the message "# Please include a commit message!"  when git commit happens
+```
+#!/bin/sh
+
+echo "# Please include a commit message!" > $1
+```
+![git_hooks_example](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/git_hook.png)
 
 ## Linux commands
 
