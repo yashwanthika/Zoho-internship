@@ -18,14 +18,23 @@ git hooks run automatically every time a particular event occurs in a Git reposi
 Hooks reside in the .git/hooks directory of every Git repository. 
 
 .git/hooks contain:
-applypatch-msg.sample       
+
+applypatch-msg.sample    
+
 commit-msg.sample           
+
 post-update.sample          
+
 pre-applypatch.sample       
+
 pre-commit.sample
+
 pre-push.sample
+
 pre-rebase.sample
+
 prepare-commit-msg.sample
+
 update.sample
 
 the .sample extension prevents them from executing by default. To “install” a hook, .sample extension is removed.
