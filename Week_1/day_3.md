@@ -6,12 +6,13 @@ Rebase is used to move the entire feature branch to begin on the tip of the main
 ```
 git rebase [maseter] [branch_name]
 ```
+![git rebase [maseter] [branch_name]](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/Rebase.png)
 ### git cherry-pick
 Cherry picking is the act of picking a commit from a branch and appending it to the current working head.
 ```
 git cherry-pick [commit_reference]
 ```
-
+![git cherry-pick [commit_reference]](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/cherry_pick.png)
 ### git hooks
 git hooks run automatically every time a particular event occurs in a Git repository.Hooks reside in the .git/hooks directory of every Git repository. 
 
@@ -47,11 +48,12 @@ To list all environment variables
 ```
 $ set
 ```
-
 To output the value of the environment variable from the shell,
 ```
 $ echo $[Variable_name]
 ```
+![Env_variables](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/Environment_variable.png)
+
 .env file
 A . env file is a simple text configuration file for controlling Applications environment variables.
 To create .env file
@@ -62,7 +64,10 @@ $ touch .env
 
 SSH and SCP:
 
-The Secure Copy Protocol (SCP), is a file transfer network protocol used to move files onto servers, and it fully supports encryption and authentication. SCP uses Secure Shell (SSH) mechanisms for data transfer and authentication to ensure the confidentiality of the data in transit.
+The Secure Copy Protocol (SCP), is a file transfer network protocol used to move files onto servers, and it fully supports encryption and authentication. 
+![scp](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/SCP.png)
+
+SCP uses Secure Shell (SSH) mechanisms for data transfer and authentication to ensure the confidentiality of the data in transit.
 Secure Shell (ssh) transfers the data in encrypted form between the host and the client
 ```
 $ ssh [username]@[server]
@@ -84,7 +89,7 @@ Options:
 -z : compress file data.
 
 -h : human-readable, output numbers in a human-readable format.
-
+![rsync_example](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/rsync.png)
 
 
 Find :
@@ -127,6 +132,7 @@ which command is used to locate the executable file or location of a program by 
 ```
 $ which [program_name]
 ```
+![linux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/Linux_cmd.png)
 ### Mount a disk to your machine:
 
 Mount point:
@@ -238,6 +244,7 @@ To kill tmux server, along with all sessions
 ```
 $ tmux kill-server
 ```
+![tmux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/tmux.png)
 
 .tmux.conf file 
 
