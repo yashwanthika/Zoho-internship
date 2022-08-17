@@ -22,36 +22,46 @@ $ deactivate
 Pip is a dependency management tool that comes together with the standard Python installation for Windows and can be installed via Homebrew for MacOS and the distribution app manager for Linux systems.
 To install pip
 ```
-pip install [package_name]
+$ pip install [package_name]
 ```
 
 Command to list the packages installed through pip.
 ```
-pip list
+$ pip list
 ```
-To uninstall pip
+To uninstall packages
 ```
-pip uninstall [package_name]
+$ pip uninstall [package_name]
 ```
 ## conda
+
 Conda is a dependency management tool that comes with Anaconda.
 
+To install packages through conda
+```
+$ conda install [packagename]
+```
 Command to list the packages installed through conda
 ```
-conda list
+$ conda list
 ```
+To uninstall packages
+```
+$ conda remove [packagename]
+```
+
 ## poetry
 
-
+poetry is a tool to handle dependency installation as well as building and packaging of Python packages.It helps us to declare, manage and install dependencies of Python projects.
 
 To install poetry either use 
 ```
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+$ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 ```
 or 
 
 ```
-pip install poetry
+$ pip install poetry
 ```
 To check the version of poetry 
 ```
@@ -95,12 +105,14 @@ $ python [filename].py
 ```
 The build command builds the source and wheels archives
 ```
-poetry build
+$ poetry build
 ```
 The publish command publishes the package, previously built with the build command, to the remote repository.
 ```
-poetry publish
+$ poetry publish
 ```
+
+when compared to pip and conda poetry provides better handling of dependency conflicts.
 
 ## mypy
 
@@ -110,47 +122,49 @@ $ pip install mypy
 ```
 
 ```
-mypy [filename].py
+$ mypy [filename].py
 ```
 
 ## Pylint
 
-pip install pre-commit
-pre-commit install
+Pylint is a tool for linting code. Linting is the process of checking the code for basic stylistic mistakes. It doesn't verify whether the code works or not, it checks that the code looks as good as possible and is readable by others.
 
-pylint :
 
 To install pylint
 ```
-pip install pylint
+$ pip install pylint
 ```
-
+To check version (to verify pylint installation)
 ```
-pylint --version
+$ pylint --version
 ```
-
+To run pylint over the code
 ```
-pylint filename.py
+$ pylint filename.py
 ```
 
 
 ## Black
+Black is a code reformatting tool .It reformats the code to improve readability.
 
 To install black
 ```
-pip install black
+$ pip install black
 ```
-
+To check if there is any code to reformat
 ```
-black --check --target-version=py35 .
+$ black --check --target-version=py35 .
 ```
-
+To reformat code
 ```
-black --target-version=py35 .
+$ black --target-version=py35 .
 ```
 
 ## parallel processing:
 
+Parallel processing using multi processing and joblib
+
+Multiprocessing
 ```
 from multiprocessing import Pool
 import time
@@ -190,3 +204,47 @@ if __name__ ==  '__main__':
     plotly.offline.plot(fig, filename='comparison_bw_multiproc.html')
     
 ```
+
+Joblib
+
+```
+from multiprocessing import Pool
+import time
+import plotly.express as px
+import plotly
+import pandas as pd
+from joblib import Parallel, delayed
+
+def f(x):
+    time.sleep(2)
+    return x**2
+
+
+def runner(list_length):
+    print(f"Size of List:{list_length}")
+    t0 = time.time()
+    result1 = Parallel(n_jobs=8)(delayed(f)(i) for i in range(list_length))
+    t1 = time.time()
+    print(f"With joblib we ran the function in {t1 - t0:0.4f} seconds")
+    time_without_multiprocessing = t1-t0
+    t0 = time.time()
+    pool = Pool(8)
+    result2 = pool.map(f,list(range(list_length)))
+    pool.close()
+    t1 = time.time()
+    print(f"With multiprocessing we ran the function in {t1 - t0:0.4f} seconds")
+    time_with_multiprocessing = t1-t0
+    return time_without_multiprocessing, time_with_multiprocessing
+
+if __name__ ==  '__main__':
+    times_taken = []
+    for i in range(1,16):
+        list_length = i
+        time_without_multiprocessing, time_with_multiprocessing = runner(list_length)
+        times_taken.append([list_length, 'No Mutiproc', time_without_multiprocessing])
+        times_taken.append([list_length, 'Multiproc', time_with_multiprocessing])
+
+    timedf = pd.DataFrame(times_taken,columns = ['list_length', 'type','time_taken'])
+    fig =  px.line(timedf,x = 'list_length',y='time_taken',color='type')
+    plotly.offline.plot(fig, filename='comparison_bw_multiproc.html')
+ ```
