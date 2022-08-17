@@ -117,12 +117,13 @@ $ poetry publish
 when compared to pip and conda poetry provides better handling of dependency conflicts.
 
 ## Mypy
+Mypy is a static type checker for Python .Provided  with type annotations, mypy can type check the code and find common bugs
 
 to install mypy
 ```
 $ pip install mypy
 ```
-
+To run mypy
 ```
 $ mypy [filename].py
 ```
