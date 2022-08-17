@@ -1,5 +1,7 @@
+# Week 2
+# Day 1 : 16 Aug 2022
 
-## virtualenv:
+## Virtualenv:
 A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments, and  libraries installed in the system Python (base).
 To install virtualenv:
 ```
@@ -18,7 +20,7 @@ To deactivate a virtual environment
 $ deactivate
 ```
 
-## pip
+## Pip
 Pip is a dependency management tool that comes together with the standard Python installation for Windows and can be installed via Homebrew for MacOS and the distribution app manager for Linux systems.
 To install pip
 ```
@@ -33,7 +35,7 @@ To uninstall packages
 ```
 $ pip uninstall [package_name]
 ```
-## conda
+## Conda
 
 Conda is a dependency management tool that comes with Anaconda.
 
@@ -50,7 +52,7 @@ To uninstall packages
 $ conda remove [packagename]
 ```
 
-## poetry
+## Poetry
 
 poetry is a tool to handle dependency installation as well as building and packaging of Python packages.It helps us to declare, manage and install dependencies of Python projects.
 
@@ -114,7 +116,7 @@ $ poetry publish
 
 when compared to pip and conda poetry provides better handling of dependency conflicts.
 
-## mypy
+## Mypy
 
 to install mypy
 ```
@@ -160,9 +162,9 @@ To reformat code
 $ black --target-version=py35 .
 ```
 
-## parallel processing:
+## Parallel processing:
 
-Parallel processing using multi processing and joblib
+Parallel processing can be done using multi processing and joblib
 
 Multiprocessing
 ```
@@ -204,6 +206,7 @@ if __name__ ==  '__main__':
     plotly.offline.plot(fig, filename='comparison_bw_multiproc.html')
     
 ```
+![output](https://github.com/yashwanthika/Zoho-internship/blob/main/week_2/images/multiprocessing_example.png)
 
 Joblib
 
@@ -248,3 +251,4 @@ if __name__ ==  '__main__':
     fig =  px.line(timedf,x = 'list_length',y='time_taken',color='type')
     plotly.offline.plot(fig, filename='comparison_bw_multiproc.html')
  ```
+![output](https://github.com/yashwanthika/Zoho-internship/blob/main/week_2/images/joblib_example.png)
