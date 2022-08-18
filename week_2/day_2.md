@@ -34,7 +34,7 @@ Conda is a dependency management tool that comes with Anaconda.The default repos
 3. Create an environment
 
     ```
-    conda create -n [environment_name] python=x.x anaconda
+    $ conda create -n [environment_name] python=x.x anaconda
     ```
 
 4. Activate the environment
@@ -132,6 +132,12 @@ Conda is a dependency management tool that comes with Anaconda.The default repos
         ```
         i. From a specific branch or tag or commit:
         ```
+        poetry add git+[specific_url]
+        ```
+        Example
+        ```
+        poetry add git+https://github.com/sdispater/pendulum.git#develop
+        poetry add git+https://github.com/sdispater/pendulum.git#2.0.5
         ```
         
 
@@ -157,7 +163,8 @@ Conda is a dependency management tool that comes with Anaconda.The default repos
     ![poetry_lock_example](https://github.com/yashwanthika/Zoho-internship/blob/main/week_2/images/Poetry_lock.png)
     
     c. Create a poetry.lock without installing any package
-    poetry add [packagename] updates the lock file or creates one if it is not present .
+    
+    `$ poetry add [packagename]` updates the lock file or creates one if it is not present .
     poetry install is used to install the dependecies as per the lock file
 
 6. Update dependencies
@@ -179,8 +186,8 @@ Conda is a dependency management tool that comes with Anaconda.The default repos
     --unset - remove the configuration of that specific key
 9. Uninstall poetry
     ```
-    curl -sSL https://install.python-poetry.org | python3 - --uninstall
-    curl -sSL https://install.python-poetry.org | POETRY_UNINSTALL=1 python3 -
+    $ curl -sSL https://install.python-poetry.org | python3 - --uninstall
+    $ curl -sSL https://install.python-poetry.org | POETRY_UNINSTALL=1 python3 -
     ```
 
 
@@ -204,7 +211,7 @@ $ pip install black
 ```
 Installation of isort 
 ```
-pip install isort
+$ pip install isort
 ```
 3.Write a sample program and get it formatted using black and isort
 ```
@@ -246,7 +253,8 @@ Using isort
   b. If all the imports are properly ordered
   isort can also be used to verify that code is correctly formatted by running it with -c
   ```
-  isort [filename].py -c
+  $ isort [filename].py -c
   ```
   c. if there are any unwanted imports in the program
+  
   unwanted imports cant be removed by black or isort. Autoflake can be used to remove unwanted imports
