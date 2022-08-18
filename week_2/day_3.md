@@ -69,6 +69,7 @@ package
 3. Why we need one for Python ?
 
 4. Write an example programs with static typing using mypy
+
 5. mypy.ini
   a. What are the contents of this file
   b. Create mypy.ini and add it to your repo
@@ -80,6 +81,25 @@ Linting is the process of checking the code for basic stylistic mistakes. It doe
 pylint is a tool for linting code.
 
 2. Write an example program and run pylint over that file
+Example program:
+```
+import sys
+from numpy import arange, argmax
+
+def addition(var_a, var_b):
+    ans = var_a + var_b
+    return ans
+
+def subtraction(var_a,var_b):
+    ans = var_a - var_b
+    return ans
+
+a = arange(5)
+print(a)
+print(argmax(a))
+```
+
+![](https://github.com/yashwanthika/Zoho-internship/blob/main/week_2/images/Pylint_example.png)
 3. pylintrc file
   a. What are the contents of this file
   b. Create pylintrc file and add to your repo
