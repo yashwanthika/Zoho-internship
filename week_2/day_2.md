@@ -82,7 +82,10 @@ Conda is a dependency management tool that comes with Anaconda.The default repos
     ```
     $ conda update conda
     ```
-
+11. list conda environments
+    ```
+    $ conda info --env
+    ```
 11. Uninstall Conda
 
     To remove miniconda
