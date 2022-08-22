@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/additiveiter/__init__.py
+src/additiveiter/add_iter.py
+src/additiveiter.egg-info/PKG-INFO
+src/additiveiter.egg-info/SOURCES.txt
+src/additiveiter.egg-info/dependency_links.txt
+src/additiveiter.egg-info/top_level.txt
