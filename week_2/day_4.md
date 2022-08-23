@@ -13,6 +13,7 @@ add_iter([9,5,3,2,1])
 returns 15
 # Pytest
 1. What is a unitest
+
 The code is split into smallest testing parts called units and tested individually .This process is called as unit testing.
 
 2. Write few unit tests and run pytest
@@ -95,6 +96,7 @@ def test_create_file(tmp_path,input_data):
     assert p.read_text() == str(input_data)
 ```
 6. What is conftest.py
+
 conftest.py  is used to store test configurataions and fixtures used by other test functions
 a. Create a sample file
 ```
