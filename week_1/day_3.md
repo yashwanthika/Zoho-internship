@@ -162,7 +162,7 @@ which command is used to locate the executable file or location of a program by 
 ```
 $ which [program_name]
 ```
-![linux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/Linux_cmd.png)
+![linux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/week_1/images/Linux_cmd.png)
 ### Mount a disk to your machine:
 
 Mount point:
@@ -274,7 +274,7 @@ To kill tmux server, along with all sessions
 ```
 $ tmux kill-server
 ```
-![tmux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/Week_1/images/tmux.png)
+![tmux_commands](https://github.com/yashwanthika/Zoho-internship/blob/main/week_1/images/tmux.png)
 
 .tmux.conf file 
 
